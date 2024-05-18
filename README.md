@@ -1,10 +1,5 @@
 # edtechspark
 
-# npay
-
-
-
-
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
@@ -41,7 +36,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">N-PAY</h3>
+  <h3 align="center">EDTECHSPARK</h3>
 
   <p align="center">
     An awesome README template to jumpstart your projects!
