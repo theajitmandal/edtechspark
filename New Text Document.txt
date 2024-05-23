@@ -1,0 +1,21 @@
+Major Features
+1. Authentication System 
+	Minor Features - Signup, Login, Social Auth, Refresh/Access Token
+2. Update Layout, FAQ, Course Category
+3. Course
+4. Analytics
+5. Orders
+6. Notifications
+
+
+Low Scale Application - not much big, people won't visit much, e.g. local newspaper website
+Medium Scale Application - can have some feature which can grow in the future
+High Scale Application
+
+Tech Stacks
+1.Nextjs for frontend
+2. Nodejs for backend
+3. Redis for cache maintenance
+4. RTK Query instead of redux toolkit (redux always sends request to server, but rtk query fetches data from cache)
+5. Tailwind CSS for styles
+6. EGS for sending mails
