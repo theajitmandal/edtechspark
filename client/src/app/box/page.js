@@ -2,15 +2,24 @@
 import { Button, Input } from '@nextui-org/react'
 import React from 'react'
 import { useSelector , useDispatch } from 'react-redux'
-import { changeHeight, changeWidth, changeShape, changeBackgroundColor } from '@/redux/reducerSlices/boxSlice'
+import { changeHeight, changeWidth, changeShape, changeBackgroundColor, shiftPosition } from '@/redux/reducerSlices/boxSlice'
 
 const Box = () => {
-    const {backgroundColor, height, width, borderRadius} = useSelector(state=>state.box)
+    const {backgroundColor, height, width, borderRadius, right} = useSelector(state=>state.box)
     const dispatch = useDispatch()
+    const generateArea = () => {
+      if(borderRadius === '50%'){
+        return Math.PI * (width/2) ** 2
+      }else{
+        return height*width
+      }
+    }
   return (
-    <div>
-        <div style={{backgroundColor: backgroundColor, height: height, width: width, borderRadius: borderRadius}}>
+    <div className='flex itmes-centerflex-col p-20'>
+        <div style={{backgroundColor: backgroundColor, height: height, width: width, borderRadius: borderRadius, right: right}}>
         </div>
+        {generateArea()}
+        <Button onClick={() => dispatch(shiftPosition())}></Button>
         <Button onClick={() => dispatch(changeWidth()) }>+Width</Button>
         <Button onClick={() => dispatch(changeHeight()) }>+Height</Button>
         <Button onClick={() => dispatch(changeShape()) }>Change to circle</Button>
