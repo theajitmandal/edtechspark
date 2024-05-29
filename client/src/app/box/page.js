@@ -15,11 +15,13 @@ const Box = () => {
       }
     }
   return (
-    <div className='flex itmes-centerflex-col p-20'>
-        <div style={{backgroundColor: backgroundColor, height: height, width: width, borderRadius: borderRadius, right: right}}>
+    <div className='flex items-center flex-col p-20'>
+        <div style={{backgroundColor: backgroundColor, height: height, width: width, borderRadius: borderRadius, right: right, position: 'relative'}}>
         </div>
         {generateArea()}
-        <Button onClick={() => dispatch(shiftPosition())}></Button>
+        <Button onClick={()=> dispatch(shiftPosition(100))}>Left</Button>
+        <Button>Right</Button>
+        
         <Button onClick={() => dispatch(changeWidth()) }>+Width</Button>
         <Button onClick={() => dispatch(changeHeight()) }>+Height</Button>
         <Button onClick={() => dispatch(changeShape()) }>Change to circle</Button>

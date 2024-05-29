@@ -57,6 +57,6 @@ const boxSlice = createSlice({
   },
 });
 
-export const { changeHeight, changeWidth, changeShape, changeBackgroundColor } =
+export const { changeHeight, changeWidth, changeShape, changeBackgroundColor, shiftPosition } =
   boxSlice.actions;
 export default boxSlice.reducer;
