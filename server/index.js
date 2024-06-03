@@ -14,13 +14,7 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
   fullName: String,
   email: String,
-  phoneNumber: String,
   password: String,
-  gender: {
-    type: String,
-    enum: ['male','female','other'],
-    default: 'female'
-  },
   role: {
     type: String,
     enum: ['admin','teacher','student'],
@@ -39,10 +33,17 @@ const User = mongoose.model('User', userSchema);
 //   res.send('ok')
 // })
 
-app.post('/register', (req, res) => {
+app.post('/register', async(req, res) => {
   // console.log(req.body);
-  User.create(req.body);
-  res.send('User Created Successfully')
+  // console.log(req.body.email);
+  const userExist = await User.exists({email: req.body.email})
+  if(userExist){
+    return res.json({msg: "Email Already Exists"})
+  }
+  await User.create(req.body)
+  return res.json({msg: "User Registered Successfully"})
+  // User.create(req.body);
+  // res.send('User Created Successfully')
 })
 
 app.get('/users', async(req, res) => {
