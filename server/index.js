@@ -5,6 +5,10 @@ const dbConnect = require('./src/db/connection')
 dbConnect()
 //body parse
 app.use(express.json())
+//bcrypt
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 
 const port = process.env.PORT
 
@@ -23,74 +27,32 @@ const userSchema = new Schema({
 });
 const User = mongoose.model('User', userSchema);
 
-// app.post('/users', (req, res) => {
-//   User.create({name: 'AjitMan', addr: 'Drn'});
-//   res.send('ok')
-// })
-
-// app.post('/register', (req, res) => {
-//   User.create({name: 'AjitMan', addr: 'Drn'});
-//   res.send('ok')
-// })
-
 app.post('/register', async(req, res) => {
-  // console.log(req.body);
-  // console.log(req.body.email);
-  const userExist = await User.exists({email: req.body.email})
+  let {email, password} = req.body;
+  const hashPassword = await bcrypt.hash(password, saltRounds)
+  password = hashPassword
+  //left side email is from db and right side is of req.body.email
+  const userExist = await User.exists({email: email})
   if(userExist){
     return res.json({msg: "Email Already Exists"})
   }
   await User.create(req.body)
   return res.json({msg: "User Registered Successfully"})
-  // User.create(req.body);
-  // res.send('User Created Successfully')
 })
 
-app.get('/users', async(req, res) => {
-  const data = await User.find()
-  res.send(data)
-})
-
-// app.get('/me', (req, res) => {
-//   // res.send('Hello World!')
-//   res.send({
-//     name: "Ajit",
-//     balance: 100000,
-//     rewardPoint: 100
-//   })
-// })
-
-//query params
-// const userList = [
-//   'ajit', 'ram', 'mandal'
-// ]
-
-// app.get('/users', (req, res) => {
-//   const searchedUser = userList.filter((item) => {
-//     if(item[0] == req.query.startswith) return item
-//   })
-//   res.send(searchedUser)
-// })
-
-//path params
-const userList = [
-  {id:1, name: 'Ajit', addr: 'ktm'},
-  {id:2, name: 'Ram', addr: 'ktm'},
-  {id:3, name: 'Shyam', addr: 'brt'},
-  {id:4, name: 'Hari', addr: 'drn'},
-  {id:5, name: 'Hero', addr: 'pkr'},
-]
-
-
-
-
-app.get('/users/:id', (req, res) => {
-  const particularUser = userList.find((item) => {
-    if(item.id == req.params.id){
-      return item
+app.post('/login', async(req, res) => {
+  const {email, password} = req.body;
+  const user = await User.findOne({email: email})
+  if(user){
+    const isMatched = await bcrypt.compare(password, user.password);
+    if(isMatched){
+      res.json({msg: "Authorized"})
+    }else{
+      res.json({msg: "Invalid Password"})
     }
-  })
-  res.send(particularUser)
+  }else{
+    res.json({msg: "Email not registered"})
+  }
 })
 
 app.listen(port, () => {
