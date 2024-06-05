@@ -181,7 +181,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Ajit Mandal - [@theajitmandal](https://x.com/theajitmandal) - email@example.com
+Ajit Mandal - [@theajitmandal](https://x.com/theajitmandal) - theajitmandal@gmail.com
 
 EDTECHSPARK Project Link: [https://github.com/theajitmandal/edtechspark](https://github.com/theajitmandal/edtechspark)
 
