@@ -9,6 +9,7 @@ app.use(express.json())
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
+const jwt = require('jsonwebtoken');
 
 const port = process.env.PORT
 
@@ -46,7 +47,8 @@ app.post('/login', async(req, res) => {
   if(user){
     const isMatched = await bcrypt.compare(password, user.password);
     if(isMatched){
-      res.json({msg: "Authorized"})
+      const token = jwt.sign({ email: email }, process.env.SECRET_KEY);
+      res.json({msg: "Authorized", token})
     }else{
       res.json({msg: "Invalid Password"})
     }

@@ -9,7 +9,7 @@ export default function Login() {
   return (
     <div>
       <Header/>
-      <div className="flex flex-col mx-auto w-1/4 bg-white shadow shadow-lg text-center m-10">
+      <div className="flex flex-col mx-auto w-1/4 bg-white shadow text-center m-10">
         <h1 className="text-2xl text-bold text-center mt-2">
           Login to your Account
         </h1>

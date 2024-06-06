@@ -5,8 +5,8 @@ import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Header from "@/components/Header/page";
-import Footer from "@/components/Footer/page";
+// import Header from "@/components/Header/page";
+// import Footer from "@/components/Footer/page";
 
 const Register = () => {
   const formik = useFormik({
@@ -26,47 +26,49 @@ const Register = () => {
         .matches(/[^\w]/, "Password must contain 1 special character"),
     }),
     onSubmit: (values) => {
+      console.log('Hello');
+      console.log(values);
       alert(JSON.stringify(values, null, 2));
     },
   });
   return (
     <div>
-      <Header />
-      <div className="flex flex-col mx-auto w-1/4 bg-white shadow shadow-lg text-center m-10 p-5">
+      {/* <Header /> */}
+      <div className="flex flex-col mx-auto w-1/4 bg-white shadow text-center m-10 p-5">
         <h1 className="text-2xl text-bold text-center mt-2">
           Signup and Start Learning
         </h1>
         <div className="flex flex-col gap-4 m-5 p-2">
           <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
-            <Input
+            <input
               id="fullname"
               name="fullname"
               onChange={formik.handleChange}
               value={formik.values.fullname}
-              isRequired
+              
               type="text"
               label="Full Name"
             />
 
-            <Input
+            <input
               id="email"
               name="email"
               onChange={formik.handleChange}
               value={formik.values.email}
-              isRequired
+              
               type="email"
               label="Email"
             />
-            <Input
+            <input
               id="password"
               name="password"
               onChange={formik.handleChange}
               value={formik.values.password}
-              isRequired
+              
               type="password"
               label="Password"
             />
-            <Button color="primary">Signup</Button>
+            <button type="submit" color="primary">Signup</button>
           </form>
 
           <p>
@@ -77,9 +79,56 @@ const Register = () => {
           </p>
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };
 
 export default Register;
+
+// import React from 'react';
+// import { useFormik } from 'formik';
+
+// const Register = () => {
+//   const formik = useFormik({
+//     initialValues: {
+//       firstName: '',
+//       lastName: '',
+//       email: '',
+//     },
+//     onSubmit: values => {
+//       alert(JSON.stringify(values, null, 2));
+//     },
+//   });
+//   return (
+//     <form onSubmit={formik.handleSubmit}>
+//       <label htmlFor="firstName">First Name</label>
+//       <input
+//         id="firstName"
+//         name="firstName"
+//         type="text"
+//         onChange={formik.handleChange}
+//         value={formik.values.firstName}
+//       />
+//       <label htmlFor="lastName">Last Name</label>
+//       <input
+//         id="lastName"
+//         name="lastName"
+//         type="text"
+//         onChange={formik.handleChange}
+//         value={formik.values.lastName}
+//       />
+//       <label htmlFor="email">Email Address</label>
+//       <input
+//         id="email"
+//         name="email"
+//         type="email"
+//         onChange={formik.handleChange}
+//         value={formik.values.email}
+//       />
+//       <button type="submit">Submit</button>
+//     </form>
+//   );
+// };
+
+// export default Register;
