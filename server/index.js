@@ -9,9 +9,12 @@ app.use(express.json())
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
+const cors = require('cors')
+app.use(cors())
+
 const jwt = require('jsonwebtoken');
 
-const port = process.env.PORT
+const port = process.env.PORT || 4000
 
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
@@ -29,6 +32,7 @@ const userSchema = new Schema({
 const User = mongoose.model('User', userSchema);
 
 app.post('/register', async(req, res) => {
+  console.log(req.body);
   let {email, password} = req.body;
   const hashPassword = await bcrypt.hash(password, saltRounds)
   password = hashPassword
