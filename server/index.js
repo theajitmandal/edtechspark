@@ -35,14 +35,14 @@ app.post('/register', async(req, res) => {
   console.log(req.body);
   let {email, password} = req.body;
   const hashPassword = await bcrypt.hash(password, saltRounds)
-  password = hashPassword
+  req.body.password = hashPassword
   //left side email is from db and right side is of req.body.email
   const userExist = await User.exists({email: email})
   if(userExist){
-    return res.json({msg: "Email Already Exists"})
+    return res.status(409).json({msg: "Email Already Exists"})
   }
   await User.create(req.body)
-  return res.json({msg: "User Registered Successfully"})
+  return res.status(200).json({msg: "User Registered Successfully"})
 })
 
 app.post('/login', async(req, res) => {
@@ -54,10 +54,10 @@ app.post('/login', async(req, res) => {
       const token = jwt.sign({ email: email }, process.env.SECRET_KEY);
       res.json({msg: "Authorized", token})
     }else{
-      res.json({msg: "Invalid Password"})
+      res.status(401).json({msg: "Invalid Password"})
     }
   }else{
-    res.json({msg: "Email not registered"})
+    res.status(409).json({msg: "Email not registered"})
   }
 })
 

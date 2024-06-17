@@ -7,6 +7,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Header from "@/components/Header/page";
 import Footer from "@/components/Footer/page";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const formik = useFormik({
@@ -37,6 +38,12 @@ const Register = () => {
       body: JSON.stringify(values)
   };
   const response = await fetch('http://localhost:4000/register', requestOptions);
+  const data = await response.json()
+  if(response.status == '200'){
+    toast.success(data.msg)
+  }else{
+    toast.error(data.msg)
+  }
   }
   return (
     <div>
@@ -48,10 +55,10 @@ const Register = () => {
         <div className="flex flex-col gap-4 m-5 p-2">
           <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
             <Input
-              id="fullname"
-              name="fullname"
+              id="fullName"
+              name="fullName"
               onChange={formik.handleChange}
-              value={formik.values.fullname}
+              value={formik.values.fullName}
               
               type="text"
               label="Full Name"
