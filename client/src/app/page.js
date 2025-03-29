@@ -1,5 +1,5 @@
 import Footer from "@/components/Footer/page";
-import Header from "@/components/Header/page";
+import Header from "@/components/Nav/page";
 import Image from "next/image";
 
 export default function Home() {

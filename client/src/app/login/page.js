@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Header from "@/components/Header/page";
+import Header from "@/components/Nav/page";
 import Footer from "@/components/Footer/page";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";

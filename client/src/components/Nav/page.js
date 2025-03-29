@@ -10,16 +10,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { Input } from "@nextui-org/react";
 
-export default function Header() {
+export default function Nav() {
   return (
-    <div className="bg-white ">
+    <div className=" flex bg-white">
       <Navbar>
-        <NavbarBrand>
-          <Image src="/edtechsparklogo.svg" width={90} height={30} alt="logo" />
-          <p className="font-bold text-inherit">EDTECHSPARK</p>
-        </NavbarBrand>
-        <div>
-        <input className="border border-5" label="Search"/>
+        <div className="justify-content-start">
+          <NavbarBrand>
+            <Image
+              src="/edtechsparklogo.svg"
+              width={90}
+              height={30}
+              alt="logo"
+            />
+            <p className="font-bold text-inherit">EDTECHSPARK</p>
+          </NavbarBrand>
+        </div>
+        <div className="flex items-center">
+        <Input type="Search" label="Search" />
         </div>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarItem>
