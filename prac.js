@@ -4,4 +4,6 @@ for(elements in elements){
 }
 const arr = [2, 4, 6, 8, 10]
 const newArr = arr.map((e) => e + 2 )
+const newArr1 = arr.filter((e) => e + 2 )
 console.log(newArr);
+console.log(newArr1);
