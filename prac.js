@@ -12,6 +12,7 @@ const array = [2, 4, 6, 8]
 array.pop();
 array.push();
 array.unshift();
+console.log(`The new array is ${array}`);
 console.log(array);
 
 
