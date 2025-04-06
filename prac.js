@@ -10,13 +10,14 @@ console.log(newArr1);
 
 const array = [2, 4, 6, 8]
 const array1 = [2, 4, 6, 8, 10, 12, 14, 16]
-const array2 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+const array3 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 21, 23, 24
 array.pop();
 array.push();
 array.unshift();
 console.log(`The new array is ${array}`);
 console.log(`The original array is ${array1}`);
 console.log(`The original array is ${array2}`);
+console.log(`The original array is ${array3}`);
 console.log(array);
 
 
