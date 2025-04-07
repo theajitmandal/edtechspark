@@ -18,6 +18,7 @@ console.log(`The new array is ${array}`);
 console.log(`The original array is ${array1}`);
 console.log(`The original array is ${array2}`);
 console.log(`The original array is ${array3}`);
+console.log(`The original array is ${array4}`);
 console.log(array);
 
 
