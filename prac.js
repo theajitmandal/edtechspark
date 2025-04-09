@@ -21,6 +21,7 @@ console.log(`The original array is ${array2}`);
 console.log(`The original array is ${array3}`);
 console.log(`The original array is ${array4}`);
 console.log(`The original array is ${array5}`);
+console.log(`The original array is ${array6}`);
 console.log(array);
 
 
