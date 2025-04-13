@@ -32,5 +32,7 @@ console.log([position]);
 
 let text = "Please locate where 'locate' occurs!";
 let index = text.indexOf("locate", 15);
+console.log(index);
+
 
 
