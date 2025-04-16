@@ -35,6 +35,7 @@ let index = text.indexOf("locate", 15);
 console.log(index);
 console.log(text);
 console.log(postiion + text);
+console.log(postiion + index);
 
 
 
