@@ -27,6 +27,7 @@
 
 
 const fruits = ["Apple", "Orange", "Apple", "Mango"];
+const fruits1SS = ["Apple", "Orange", "Apple", "Mango", "app"];
 let position = fruits.indexOf("Apple") + 1;
 console.log([position]);
 
@@ -36,6 +37,7 @@ console.log(index);
 console.log(text);
 console.log(postiion + text);
 console.log(postiion + index);
-
+console.log(postiion + index);
+SS
 
 
