@@ -3,6 +3,9 @@ import React from "react";
 
 export default function Practice() {
   return (
-    <Nav_bar/>
+    <>
+      <Nav_bar />
+      <Footer />
+    </>
   );
 }
