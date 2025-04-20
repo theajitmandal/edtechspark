@@ -1,4 +1,4 @@
-# edtechspark
+# EDTECHSPARK
 
 <a name="readme-top" href="https://github.com/theajitmandal/edtechspark/blob/main/README.md#readme-top"></a>
 
@@ -130,22 +130,22 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 # Features phase-1
 
 - [ ] 1. Authentication System 
-	       - [ ] Signup with encrypted password 
-         - [ ] Login with JWT Token
-         - [ ] Social Authentication (Signup/Login with Email)
-         - [ ] Refresh/Access Token
+	       - [ ] 1. Sign up with encrypted password 
+         - [ ] 2. Login with JWT Token
+         - [ ] 3. Social Authentication (Sign up/Login with Email)
+         - [ ] 4. Refresh/Access Token
 - [ ] 2. User Panel
-         - [ ] Profile Activation 
-         - [ ] Profile Updation
-         - [ ] Profile Page
+         - [ ] 1. Profile Activation 
+         - [ ] 2. Profile Update
+         - [ ] 3. Profile Page
 - [ ] 3. Course List with Course categories and filters
 - [ ] 4. Shopping Cart Functionality
 - [ ] 5. Wishlists
 - [ ] 6. Orders
 - [ ] 7. Notifications
 - [ ] 8. Admin Panel
-         - [ ] Admin Dashboard
-         - [ ] Analytics
+         - [ ] 1. Admin Dashboard
+         - [ ] 2. Analytics
 
 <!-- ROADMAP -->
 
