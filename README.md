@@ -130,10 +130,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 # Features phase-1
 
 - [ ] 1. Authentication System 
-	       - [ ] 1. Sign up with encrypted password 
-         - [ ] 2. Login with JWT Token
-         - [ ] 3. Social Authentication (Sign up/Login with Email)
-         - [ ] 4. Refresh/Access Token
+	       - [ ] i. Sign up with encrypted password 
+         - [ ] ii. Login with JWT Token
+         - [ ] iii. Social Authentication (Sign up/Login with Email)
+         - [ ] iv. Refresh/Access Token
 - [ ] 2. User Panel
          - [ ] 1. Profile Activation 
          - [ ] 2. Profile Update
