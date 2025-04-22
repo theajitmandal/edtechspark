@@ -31,6 +31,7 @@ const fruits1SS = ["Apple", "Orange", "Apple", "Mango", "app"];
 let position = fruits.indexOf("Apple") + 1;
 console.log([position]);
 console.log(fruits);
+let x = 100 + 50;
 
 let text = "Please locate where 'locate' occurs!";
 let index = text.indexOf("locate", 15);
