@@ -36,6 +36,7 @@ let x = 100 + 50;
 let text = "Please locate where 'locate' occurs!";
 let index = text.indexOf("locate", 15);
 let index1 = text.indexOf("loc", 15);
+let index12 = text.indexOf("occ", 15);
 console.log(index);
 console.log(text);
 console.log(index1);
