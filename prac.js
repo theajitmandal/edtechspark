@@ -43,5 +43,6 @@ console.log(index1);
 console.log(postiion + text);
 console.log(postiion + index);
 console.log(postiion + index);
+console.log(index1 + index12);
 
 
