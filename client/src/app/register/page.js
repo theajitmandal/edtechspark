@@ -82,6 +82,15 @@ const Register = () => {
               type="password"
               label="Password"
             />
+              <Input
+              id="cpassword"
+              name="cpassword"
+              onChange={formik.handleChange}
+              value={formik.values.cpassword}
+              
+              type="cpassword"
+              label="Confirm Password"
+            />
             <Button type="submit" color="primary">Signup</Button>
           </form>
 
