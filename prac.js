@@ -8,6 +8,8 @@
 // console.log(newArr);
 // console.log(newArr1);
 
+const { randomBytes } = require("crypto");
+
 // const array = [2, 4, 6, 8]
 // const array1 = [2, 4, 6, 8, 10, 12, 14, 16]
 // const array3 = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 21, 23, 24]
@@ -44,5 +46,7 @@ console.log(postiion + text);
 console.log(postiion + index);
 console.log(postiion + index);
 console.log(index1 + index12);
+
+require(randomBytes)
 
 
