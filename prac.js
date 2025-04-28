@@ -34,6 +34,7 @@ let position = fruits.indexOf("Apple") + 1;
 console.log([position]);
 console.log(fruits);
 let x = 100 + 50;
+let y = 100 + 150;
 
 let text = "Please locate where 'locate' occurs!";
 let index = text.indexOf("locate", 15);
@@ -47,6 +48,7 @@ console.log(postiion + index);
 console.log(postiion + index);
 console.log(index1 + index12);
 
-require(randomBytes)
+console.log(require(randomBytes));
+
 
 
