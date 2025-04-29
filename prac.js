@@ -47,6 +47,7 @@ console.log(postiion + text);
 console.log(postiion + index);
 console.log(postiion + index);
 console.log(index1 + index12);
+console.log(index1 + index12 + index12);
 
 console.log(require(randomBytes));
 
