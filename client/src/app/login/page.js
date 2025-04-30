@@ -69,7 +69,7 @@ const Login = () => {
           </form>
           <p>
             <span className="text-lg text-sky-400">
-              <Link href="/login">Forgot Password</Link>
+              <Link href="/">Forgot Password</Link>
             </span>
           </p>
         </div>
