@@ -53,6 +53,8 @@ console.log(index1 + index12 + index12);
 console.log(require(randomBytes));
 
 require('crypto').randomBytes(64).toString('hex')
+console.log(require('crypto').randomBytes(64).toString('hex'));
+
 
 
 
