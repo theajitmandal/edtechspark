@@ -54,6 +54,8 @@ console.log(require(randomBytes));
 
 require('crypto').randomBytes(64).toString('hex')
 console.log(require('crypto').randomBytes(64).toString('hex'));
+console.log(new Date().getDay());
+
 
 switch (new Date().getDay()) {
     case 0:
