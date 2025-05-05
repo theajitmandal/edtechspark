@@ -85,6 +85,7 @@ switch (new Date().getDay()) {
 }
 
 let value = toCelsius(77);
+let value1 = toCelsius(77) + index;
 
 
 
