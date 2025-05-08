@@ -27,3 +27,12 @@ app.post('/register', async(req, res) => {
       res.status(409).json({msg: "Email not registered"})
     }
   })
+
+  const findAllUsers = async (req, res) => {
+    try {
+      const data = await User.find();
+      res.json(data);
+    } catch (err) {
+      res.json({ msg: "Something went wrong" });
+    }
+  };
