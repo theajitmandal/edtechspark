@@ -1,16 +1,22 @@
-import { Tuple, configureStore } from '@reduxjs/toolkit'
-import counterSlice from '../reducerSlices/counterSlice'
-import boxSlice from '../reducerSlices/boxSlice'
-import logger from 'redux-logger'
+import { combineReducers, configureStore, Tuple } from "@reduxjs/toolkit";
+import logger from "redux-logger";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import userSlice from "../reducerSlices/userSlice";
 
+const persistConfig = {
+  key: "root",
+  storage,
+};
 
-const store = configureStore({
-    reducer: {
-        counter: counterSlice,
-        box: boxSlice
-    },
-    middleware: () => new Tuple(logger)
-    
-})
+const rootReducer = combineReducers({
+  user: userSlice,
+});
 
-export default store
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: () => new Tuple(logger),
+});
+
+export const persistor = persistStore(store);

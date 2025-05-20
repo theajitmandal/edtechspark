@@ -16,20 +16,16 @@ const registerUser = async (req, res) => {
   console.log(req.body);
   try {
     const hashPassword = await bcrypt.hash(req.body?.password, saltRounds);
-    console.log(hashPassword);
     req.body.password = hashPassword;
-    const phoneExist = await User.exists({ phone: req.body.phone });
     const emailExist = await User.exists({ email: req.body.email });
     
-    if (phoneExist) {
-      return res.status(409).json({ msg: "Phone Number already taken" });
-    } else if (emailExist) {
+    if (emailExist) {
       return res.status(409).json({ msg: "Email already taken" });
     } else {
       await User.create(req.body);
       res.json({ msg: "User Created Successfully" });
     }
-    console.log(hashPassword);
+    
   } catch (err) {
     res.json({ msg: "Something went wrong" });
   }

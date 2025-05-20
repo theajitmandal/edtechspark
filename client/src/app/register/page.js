@@ -12,7 +12,7 @@ import toast from "react-hot-toast";
 const Register = () => {
   const formik = useFormik({
     initialValues: {
-      fullName: "",
+      name: "",
       email: "",
       password: "",
     },
@@ -27,7 +27,7 @@ const Register = () => {
     //     .matches(/[^\w]/, "Password must contain 1 special character"),
     // }),
     onSubmit: values => {
-      registerUser(values)
+      registerUser(values);
     },
   });
 
@@ -55,13 +55,13 @@ const Register = () => {
         <div className="flex flex-col gap-4 m-5 p-2">
           <form onSubmit={formik.handleSubmit} className="flex flex-col gap-4">
             <Input
-              id="fullName"
-              name="fullName"
+              id="name"
+              name="name"
               onChange={formik.handleChange}
-              value={formik.values.fullName}
+              value={formik.values.name}
               
               type="text"
-              label="Full Name"
+              label="Name"
             />
 
             <Input
@@ -73,6 +73,7 @@ const Register = () => {
               type="email"
               label="Email"
             />
+
             <Input
               id="password"
               name="password"
@@ -81,15 +82,6 @@ const Register = () => {
               
               type="password"
               label="Password"
-            />
-              <Input
-              id="cpassword"
-              name="cpassword"
-              onChange={formik.handleChange}
-              value={formik.values.cpassword}
-              
-              type="cpassword"
-              label="Confirm Password"
             />
             <Button type="submit" color="primary">Signup</Button>
           </form>

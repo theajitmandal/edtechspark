@@ -9,9 +9,13 @@ import Header from "@/components/Nav/page";
 import Footer from "@/components/Footer/page";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { setLoginDetails } from "@/redux/reducerSlices/userSlice";
 
 const Login = () => {
-  const Router = useRouter()
+  const router = useRouter()
+  const dispatch = useDispatch();
+  const Router = useRouter();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -32,8 +36,12 @@ const Login = () => {
     const data = await response.json();
     if (response.status == "200") {
       toast.success(data.msg);
-      Router.push('/')
-      
+      dispatch(setLoginDetails(data));
+      if (data.user.role == "student") {
+        router.push("/dashboard");
+      } else {
+        router.push("/admin-dashboard");
+      }
     } else {
       toast.error(data.msg);
     }
