@@ -58,4 +58,8 @@ const forgotPassword = async(req, res) => {
   console.log(req)
 }
 
-module.exports = { findAllUsers, registerUser, logInUser }
+const changePassword = async(req, res) => {
+  console.log(req)
+}
+
+module.exports = { findAllUsers, registerUser, logInUser, forgotPassword, changePassword }
